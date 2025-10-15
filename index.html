@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Box Digital - Churrascaria & Espetaria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1A1A1A;
+            color: #ECF0F1;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Tarja de Aviso - NÃO FIXA */
+        .gift-banner {
+            background: linear-gradient(135deg, #F39C12, #E67E22);
+            color: #1A1A1A;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        /* Hero Section - Nova com Curiosidade */
+        .hero {
+            background: linear-gradient(135deg, #2C1810 0%, #1A1A1A 100%);
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Efeito de Fumaça no Fundo */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><filter id="smoke"><feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/></filter></defs><rect width="1200" height="600" filter="url(%23smoke)" fill="%23000"/></svg>');
+            background-size: cover;
+            opacity: 0.15;
+            animation: smokeMove 20s ease-in-out infinite;
+        }
+
+        @keyframes smokeMove {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        /* Textura de Grelha Sutil */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(92, 58, 47, 0.1) 20px, rgba(92, 58, 47, 0.1) 22px),
+                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(92, 58, 47, 0.1) 20px, rgba(92, 58, 47, 0.1) 22px);
+            opacity: 0.3;
+        }
+
+        
+
+ transform: scale(1) translateY(0); opacity: 1; }
+            50% { transform: scale(1.1) translateY(-3px); opacity: 0.8; }
+        }
+
+        
+
+        
+        
+
+        
+
+        
+
+        
+
+        /* Hook Disruptivo */
+        .hook-disruptivo {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #1A1A1A 0%, #2C1810 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hook-disruptivo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(231, 76, 60, 0.15) 0%, transparent 70%);
+        }
+
+        .hook-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stop-sign {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(231, 76, 60, 0.6));
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 20px rgba(231, 76, 60, 0.6));
+            }
+            50% {
+                transform: scale(1.15);
+                filter: drop-shadow(0 0 30px rgba(231, 76, 60, 0.9));
+            }
+        }
+
+        .hook-disruptivo h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #E74C3C;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .hook-disruptivo .subtitle {
+            font-size: 2rem;
+            color: #F39C12;
+            margin-bottom: 40px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .hook-disruptivo p {
+            font-size: 1.4rem;
+            color: #ECF0F1;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .hook-disruptivo .highlight {
+            color: #F39C12;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .scroll-hint {
+            margin-top: 50px;
+            font-size: 1.3rem;
+            color: #E74C3C;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #E74C3C;
+        }
+
+        .section-header p {
+            font-size: 1.3rem;
+            color: #CCCCCC;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            padding: 80px 20px;
+            background: #1A1A1A;
+        }
+
+        .carousel-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid #5C3A2F;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: #2C1810;
+        }
+        /* Specific dimensions for carousels */
+        #artesCarousel .carousel-slide img, #logosCarousel .carousel-slide img {
+            height: 1350px; /* 1080x1350 px */
+            width: 1080px;
+            object-fit: cover; /* Alterado para cover para preencher o espaço */
+        }
+        #cardapioCarousel .carousel-slide img {
+            height: 1000px; /* 800x1000 px */
+            width: 800px;
+            object-fit: cover; /* Alterado para cover para preencher o espaço */
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #E74C3C, #F39C12);
+            border: none;
+            color: #ECF0F1;
+            font-size: 2rem;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
+        }
+
+        .carousel-btn:hover {
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+            transform: translateY(-50%) scale(1.2);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.7);
+        }
+
+        .carousel-btn.prev {
+            left: 20px;
+        }
+
+        .carousel-btn.next {
+            right: 20px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #5C3A2F;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #E74C3C;
+            width: 30px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.6);
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #1A1A1A 0%, #2C1810 100%);
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 3px solid #5C3A2F;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 80px 20px;
+            background: #2C1810;
+        }
+
+        .gallery-carousel-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+            padding: 0 10px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            background: #1A1A1A;
+            border: 2px solid #5C3A2F;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 450px;
+            background: #2C1810;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+            text-align: center;
+            background: #1A1A1A;
+        }
+
+        .gallery-caption h4 {
+            color: #E74C3C;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .gallery-caption p {
+            color: #CCCCCC;
+            font-size: 1rem;
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #2C1810 0%, #1A1A1A 100%);
+        }
+
+        .packages-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .packages-intro h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            color: #E74C3C;
+        }
+
+        .packages-intro p {
+            font-size: 1.4rem;
+            color: #ECF0F1;
+            line-height: 1.8;
+        }
+
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .package-card {
+            background: linear-gradient(145deg, #1A1A1A, #2C1810);
+            border-radius: 25px;
+            padding: 50px 40px;
+            position: relative;
+            border: 3px solid #5C3A2F;
+            transition: all 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(231, 76, 60, 0.4);
+            border-color: #E74C3C;
+        }
+
+        .package-card.featured {
+            border: 3px solid #E74C3C;
+            box-shadow: 0 20px 60px rgba(231, 76, 60, 0.3);
+            transform: scale(1.05);
+        }
+
+        .package-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 25px 70px rgba(231, 76, 60, 0.5);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: linear-gradient(135deg, #E74C3C, #F39C12);
+            color: #ECF0F1;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
+        }
+
+        .package-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #E74C3C;
+            text-align: center;
+        }
+
+        .package-price {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .package-price .old {
+            font-size: 1.3rem;
+            text-decoration: line-through;
+            color: #888;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .package-price .current {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #F39C12;
+            display: block;
+        }
+
+        .package-price .installments {
+            font-size: 1rem;
+            color: #CCCCCC;
+            margin-top: 10px;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .package-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #5C3A2F;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1.05rem;
+        }
+
+        .package-features li:before {
+            content: '✓';
+            color: #E74C3C;
+            font-weight: bold;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .cta-button {
+            display: block;
+            background: linear-gradient(135deg, #E74C3C, #F39C12);
+            color: #FFFFFF;
+            padding: 20px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.6);
+        }
+
+        .package-card.featured .cta-button {
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+            font-size: 1.4rem;
+            padding: 20px 50px;
+        }
+
+        /* Free Gift Section - MOVIDA PARA BAIXO */
+        .free-gift {
+            background: linear-gradient(135deg, #2C1810 0%, #1A1A1A 100%);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid #E74C3C;
+            border-bottom: 3px solid #E74C3C;
+        }
+
+        .free-gift::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(243, 156, 18, 0.15) 0%, transparent 70%);
+        }
+
+        .free-gift-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .gift-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #F39C12, #E74C3C);
+            color: #ECF0F1;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
+        }
+
+        .free-gift h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #E74C3C;
+            line-height: 1.2;
+        }
+
+        .free-gift p {
+            font-size: 1.4rem;
+            color: #ECF0F1;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #E74C3C, #F39C12);
+            color: #FFFFFF;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.6);
+        }
+
+        .download-btn span {
+            font-size: 1.5rem;
+        }
+
+        .gift-note {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #CCCCCC;
+            font-style: italic;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 20px;
+            background: #1A1A1A;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(145deg, #1A1A1A, #2C1810);
+            border-radius: 20px;
+            border: 2px solid #5C3A2F;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: #E74C3C;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #E74C3C, #F39C12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ECF0F1;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
+        }
+
+        .step-icon {
+            font-size: 3.5rem;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover .step-icon {
+            transform: scale(1.1);
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #E74C3C;
+        }
+
+        .step-card p {
+            color: #CCCCCC;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #1A1A1A 0%, #2C1810 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: #1A1A1A;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #5C3A2F;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #E74C3C;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 300px;
+            background: #2C1810;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+
+        .testimonial-content {
+            padding: 30px;
+        }
+
+        .testimonial-stars {
+            color: #F39C12;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            color: #ECF0F1;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            color: #E74C3C;
+            font-weight: bold;
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 80px 20px;
+            background: #2C1810;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(145deg, #1A1A1A, #2C1810);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid #5C3A2F;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #E74C3C;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #E74C3C;
+        }
+
+        .benefit-card p {
+            color: #CCCCCC;
+            line-height: 1.6;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            padding: 80px 20px;
+            background: #1A1A1A;
+        }
+
+        .guarantee-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #1A1A1A, #2C1810);
+            border: 3px solid #E74C3C;
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(231, 76, 60, 0.2);
+        }
+
+        .guarantee-badge {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            background: #2C1810;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border: 3px solid #E74C3C;
+        }
+
+        .guarantee h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #E74C3C;
+        }
+
+        .guarantee p {
+            font-size: 1.3rem;
+            color: #ECF0F1;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .guarantee .highlight {
+            color: #F39C12;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 20px;
+            background: #2C1810;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #1A1A1A;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 2px solid #5C3A2F;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #E74C3C;
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #2C1810;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 30px;
+            color: #CCCCCC;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px;
+        }
+
+        .faq-item.active .faq-question {
+            color: #E74C3C;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-question::after {
+            content: '▼';
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            color: #E74C3C;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #2C1810 0%, #1A1A1A 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid #E74C3C;
+        }
+
+        .footer-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(231, 76, 60, 0.1) 0%, transparent 70%);
+        }
+
+        .footer-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            color: #E74C3C;
+        }
+
+        .footer-cta p {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            color: #ECF0F1;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-cta .cta-button {
+            font-size: 1.6rem;
+            padding: 25px 70px;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 20px;
+            background: #1A1A1A;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #5C3A2F;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #E74C3C;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            
+                align-items: center;
+            }
+
+            .download-btn {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .carousel-btn {
+                padding: 10px 15px;
+                font-size: 1.5rem;
+            }
+
+            .carousel-btn.prev {
+                left: 10px;
+            }
+
+            .carousel-btn.next {
+                right: 10px;
+            }
+
+            .package-card {
+                padding: 40px 25px;
+            }
+
+            .package-card.featured {
+                transform: scale(1);
+            }
+
+            .package-card.featured:hover {
+                transform: translateY(-10px);
+            }
+
+            .footer-cta .cta-button {
+                font-size: 1.3rem;
+                padding: 20px 50px;
+            }
+
+            .packages-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .whatsapp-float i {
+            font-size: 30px;
+        }
+
+    
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #E74C3C;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: #F39C12;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #E74C3C, #F39C12);
+            color: #FFFFFF;
+            padding: 22px 55px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.5);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-cta::before {
+            content: '🔥';
+            position: absolute;
+            left: 20px;
+            font-size: 1.5rem;
+            animation: flameFlicker 1.5s ease-in-out infinite;
+        }
+
+        @keyframes flameFlicker {
+            0%, 100% { transform: scale(1) translateY(0); opacity: 1; }
+            50% { transform: scale(1.1) translateY(-3px); opacity: 0.8; }
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.7);
+        }
+
+        .hero-preview {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+            border: 2px solid #5C3A2F;
+            margin-top: 40px;
+        }
+
+        .hero-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .hero-text {
+                text-align: left;
+                max-width: 50%;
+            }
+            .hero-preview {
+                width: 400px;
+                height: auto;
+                margin-top: 0;
+            }
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            .hero-text .subtitle {
+                font-size: 1.2rem;
+            }
+            .hero-cta {
+                padding: 18px 45px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Tarja de Aviso - NÃO FIXA -->
+    <div class="gift-banner">
+        🎁 Aviso: Seus 2 Cardápios GRÁTIS estão te esperando mais abaixo! Continue rolando para descobrir como turbinar seu negócio.
+    </div>
+
+    <!-- Hero Section - Nova com Curiosidade -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>O Segredo das Churrascarias que Lotam e Vendem Todos os Dias... Revelado!</h1>
+                <p class="subtitle">Descubra como transformar seu negócio com estratégias visuais e de conteúdo que seus concorrentes ainda não conhecem. (E sim, seus 2 cardápios grátis estão te esperando mais abaixo!)</p>
+                <a href="#pacotes" class="hero-cta">Quero Descobrir Agora! →</a>
+            </div>
+
+ <div class="hero-preview">
+                <img src="images/hero-image_min.png" alt="Imagem Principal">
+            </div>
+        </div>
+    </section>
+
+<!-- Hook Disruptivo -->
+    <section class="hook-disruptivo">
+        <div class="hook-content">
+            <div class="stop-sign">🛑</div>
+            <h2>ESPERE! Você Sabe Por Que Algumas ESpetarias Vendem e Outras Não?</h2>
+            <p class="subtitle">Não é Sorte. É Estratégia Visual e Conteúdo de Qualidade!</p>
+            
+            <p>Enquanto alguns donos lutam para conseguir clientes, outros têm fila de espera todos os dias...</p>
+            
+            <p>A diferença? Eles têm <span class="highlight">vídeos que viralizam</span>, <span class="highlight">logomarcas profissionais</span> que transmitem confiança, e <span class="highlight">MESES de conteúdo pronto</span> para postar sem parar!</p>
+            
+            <p style="font-size: 1.6rem; margin-top: 40px; color: #F39C12;">E se você pudesse ter TUDO ISSO por menos que um churrasco? 🔥</p>
+            
+            <div class="scroll-hint">⬇️ Veja o que você está perdendo ⬇️</div>
+        </div>
+    </section>
+
+    <!-- Video Section Local -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container" style="max-width: 500px;">
+                <div class="video-wrapper" style="padding-bottom: 177.77%;">
+                    <video controls preload="metadata" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0; left: 0;">
+                        <source src="./videos/meu-video.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Nova Introdução -->
+    <section class="section-header" style="padding: 80px 20px 0; background: #1A1A1A;">
+        <div class="container">
+            <h2>🎉 Conheça o Super Box Digital para Espetarias e Churrascarias</h2>
+            <p> Dá uma espiada no do que você vai receber 👇</p>
+        </div>
+    </section>
+
+
+    <!-- Carousel Section - ARTES -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎨 156 Artes Profissionais = 6+ Meses de Conteúdo!</h2>
+                <p>Nunca mais fique sem saber o que postar. Tenha conteúdo de sobra para bombar nas redes!</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel" id="artesCarousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="images/arte-1.jpg" alt="Arte 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/arte-2.jpg" alt="Arte 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/arte-3.jpg" alt="Arte 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/arte-4.jpg" alt="Arte 4">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="moveCarousel('artes', -1)">‹</button>
+                    <button class="carousel-btn next" onclick="moveCarousel('artes', 1)">›</button>
+                </div>
+                <div class="carousel-dots" id="artesDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section - LOGOMARCAS -->
+    <section class="carousel-section" style="background: #2C1810;">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎯 25 Logomarcas Profissionais</h2>
+                <p>Deixe seu negócio com uma identidade visual marcante e profissional!</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel" id="logosCarousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="images/logo-1_min.png" alt="Logo 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-2_min.png" alt="Logo 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-3_min.png" alt="Logo 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-4_min.png" alt="Logo 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-5_min.png" alt="Logo 5">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-6_min.png" alt="Logo 6">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-7_min.png" alt="Logo 7">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-8_min.png" alt="Logo 8">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-9_min.png" alt="Logo 9">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-10_min.png" alt="Logo 10">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-11_min.png" alt="Logo 11">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/logo-12_min.png" alt="Logo 12">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="moveCarousel('logos', -1)">‹</button>
+                    <button class="carousel-btn next" onclick="moveCarousel('logos', 1)">›</button>
+                </div>
+                <div class="carousel-dots" id="logosDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section - CARDÁPIOS -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>📋 E Mais: 7 Modelos de Cardápios Completos!</h2>
+                <p>Versão digital + impressão em alta qualidade + QR Code personalizado!</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel" id="cardapioCarousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="images/cardapio-1.jpg" alt="Cardápio Modelo 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/cardapio-2.jpg" alt="Cardápio Modelo 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/cardapio-3.jpg" alt="Cardápio Modelo 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/cardapio-4.jpg" alt="Cardápio Modelo 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/cardapio-5.jpg" alt="Cardápio Modelo 5">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/cardapio-6.jpg" alt="Cardápio Modelo 6">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/cardapio-7.jpg" alt="Cardápio Modelo 7">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="moveCarousel('cardapio', -1)">‹</button>
+                    <button class="carousel-btn next" onclick="moveCarousel('cardapio', 1)">›</button>
+                </div>
+                <div class="carousel-dots" id="cardapioDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="pacotes">
+        <div class="container">
+            <div class="packages-intro">
+                <h2>🔥 Pegue TUDO Isso Agora!</h2>
+                <p>Invista menos que um churrasco e tenha TODO o marketing do seu negócio resolvido por MESES!</p>
+            </div>
+            <div class="packages-container">
+                <!-- Basic Package -->
+                <div class="package-card">
+                    <h3>Kit Básico</h3>
+                    <div class="package-price">
+                        <span class="old">De R$ 97,90</span>
+                        <span class="current">R$ 27,90</span>
+                        <p class="installments">ou 6x de R$ 5,50</p>
+                    </div>
+                    <ul class="package-features">
+                        <li>3 Cardápios Digitais Editáveis</li>
+                        <li>30 Artes Profissionais para Redes Sociais</li>
+                        <li>10 Stories Prontos para Engajar</li>
+                        <li>10 Capas de Destaques do Instagram</li>
+                        <li>20 Legendas Prontas para Copiar e Colar</li>
+                        <li>Editável no Canva (versão grátis)</li>
+                        <li>Use no Celular ou PC</li>
+                        <li>Suporte via WhatsApp</li>
+                        <li>Garantia de 7 Dias</li>
+                    </ul>
+                    <a href="https://pay.cakto.com.br/37uh966_297818" class="cta-button">COMEÇAR AGORA →</a>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="package-card featured">
+                    <span class="badge">🔥 PROMOÇÃO POR TEMPO LIMITADO</span>
+                    <h3>Kit Premium COMPLETÃO</h3>
+                    <div class="package-price">
+                        <span class="old">De R$ 197,00</span>
+                        <span class="current">R$ 47,90</span>
+                        <p class="installments">ou 12x de R$ 5,57</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><strong>7 Cardápios Digitais Editáveis</strong> (versão digital + impressão + QR Code)</li>
+                        <li><strong>156 Artes Profissionais</strong> para Redes Sociais (6+ meses de conteúdo!)</li>
+                        <li><strong>25 Stories Prontos</strong> para Bombar</li>
+                        <li><strong>25 Logomarcas Editáveis</strong> (identidade visual profissional)</li>
+                        <li><strong>10 Panfletos Editáveis</strong> para impressão</li>
+                        <li><strong>20 Vídeos Profissionais</strong> para Reels e Stories</li>
+                        <li>Capas de Destaques + Capa de Facebook + Link da Bio</li>
+                        <li>50 Sugestões de Legendas Prontas</li>
+                        <li>180 Imagens Premium em Alta Qualidade</li>
+                        <li>50 Imagens PNG com Fundo Transparente</li>
+                        <li>Editável no Canva (versão grátis)</li>
+                        <li>Use no Celular ou PC</li>
+                        <li>Suporte VIP via WhatsApp</li>
+                        <li>Atualizações Gratuitas</li>
+                        <li>Garantia de 7 Dias</li>
+                    </ul>
+                    <a href="https://pay.cakto.com.br/ssww6db" class="cta-button">QUERO O COMPLETÃO! 🔥</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Gift Section - MOVIDA PARA CÁ -->
+    <section class="free-gift">
+        <div class="free-gift-content">
+            <div class="gift-badge">🎁 PRESENTE GRÁTIS COMO PROMETIDO!</div>
+            <h2>Baixe AGORA Seus 2 Cardápios Digitais Profissionais!</h2>
+            <p>Como prometido, aqui estão seus 2 modelos de cardápio gratuitos. Clique nos botões abaixo e receba instantaneamente:</p>
+            
+            <div class="download-buttons">
+                <a href="https://www.canva.com/design/DAEw1aB-f0g/7wCZ_YLfBJs-9OdsnyGqew/view?utm_content=DAEw1aB-f0g&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="download-btn">
+                    <span>📥</span> Baixar Modelo 1
+                </a>
+                <a href="https://www.canva.com/design/DAErRB8OflA/ClvSv7SvdG_TcFButdXN6Q/view?utm_content=DAErRB8OflA&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="download-btn">
+                    <span>📥</span> Baixar Modelo 2
+                </a>
+            </div>
+            
+            <p class="gift-note">* Versão digital editável no Canva. Para o kit completo com 7 modelos, volte para os pacotes acima! 👆</p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>🚀 Como Funciona? É Simples Demais!</h2>
+                <p>Você não precisa ser designer. Não precisa saber nada de edição. Tudo já está PRONTO!Basta editar, inserindo seus produtos e depois baixar</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><img src="icons/como-funciona-escolha_min.png" alt="Escolha seu Kit"></div>
+                    <h3>Escolha seu Kit</h3>
+                    <p>Escolha o que melhor se encaixa no seu negócio e comece a dar um boom na sua divulgação hoje mesmo.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><img src="icons/como-funciona-baixe_min.png" alt="Baixe na Hora"></div>
+                    <h3>Baixe na Hora</h3>
+                    <p>Após a compra, receba acesso instantâneo aos templates e baixe tudo na hora.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><img src="icons/como-funciona-edite_min.png" alt="Edite em 5 Minutos"></div>
+                    <h3>Edite em 5 Minutos</h3>
+                    <p>Com o Canva gratuito, personalize textos, imagens e preços em minutos, direto do seu celular ou PC.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><img src="icons/como-funciona-venda_min.png" alt="Venda Muito Mais"></div>
+                    <h3>Venda Muito Mais</h3>
+                    <p>Publique suas novas artes e veja seu engajamento e suas vendas dispararem!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>⭐ Veja o Que Nossos Clientes Estão Dizendo</h2>
+                <p>Resultados reais de quem transformou o marketing e TRIPLICOU as vendas</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="images/depoimento-1.jpg" alt="Depoimento 1">
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Eu não tinha tempo pra fazer post, nem sabia o que escrever na legenda... agora com o Box ficou fácil demais! Em poucos dias o movimento aumentou muito, o povo tá elogiando o cardápio, achei top"</p>
+                        <p class="testimonial-author">— Edson Cardoso, Espetaria da Ilha</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="images/depoimento-2.jpg" alt="Depoimento 2">
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">Esse Box me salvou! Eu gastava 200 conto todo mês com designer e esperava dias pra receber as artes… agora eu só vou lá, baixo e posto, tudo na hora, pelo celular, valeu a pena!"</p>
+                        <p class="testimonial-author">— Marcos dos Santos, Churrascaria Saborear</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="images/depoimento-3.jpg" alt="Depoimento 3">
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Antes meu perfil tinha uns 300 seguidores. Hoje tenho mais de 2 mil e as encomendas não param! Esse kit mudou meu negócio!Recomendo"</p>
+                        <p class="testimonial-author">— Carlos Mendes, Espetinho do Carlão</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>💎 Por Que Escolher Nosso Kit?</h2>
+                <p>A solução completa que você precisa para FICAR TRANQUILO com o marketing da sua churrascaria</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><img src="icons/beneficio-rapido-facil_min.png" alt="Rápido e Fácil"></div>
+                    <h3>Rápido e Fácil</h3>
+                    <p>Em 5 minutos você já está editando e postando as artes. Não precisa ser designer!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><img src="icons/beneficio-economia-brutal_min.png" alt="Economia Brutal"></div>
+                    <h3>Economia Brutal</h3>
+                    <p>Um designer cobra R$ 50+ por arte. Aqui você leva 156 artes + 7 cardápios por menos de R$ 50!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><img src="icons/beneficio-edite-celular_min.png" alt="Edite do Celular"></div>
+                    <h3>Edite do Celular</h3>
+                    <p>Use o app do Canva e edite de qualquer lugar, a qualquer hora. Total liberdade!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><img src="icons/beneficio-design-profissional_min.png" alt="Design Profissional"></div>
+                    <h3>Design Profissional</h3>
+                    <p>Artes de alta qualidade feitas por designers profisisonais focadas em conversão</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><img src="icons/beneficio-atualize-sempre_min.png" alt="Atualize Sempre"></div>
+                    <h3>Atualize Sempre</h3>
+                    <p>Mudou preço? Novo prato? Edite quando quiser sem pagar nada a mais!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><img src="icons/beneficio-canva-gratis_min.png" alt="Canva Grátis"></div>
+                    <h3>Canva Grátis</h3>
+                    <p>Funciona na versão GRATUITA do Canva. Você não paga mensalidade nenhuma!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-badge">
+                    🛡️
+                </div>
+                <h2>Garantia Incondicional de 7 Dias</h2>
+                <p>Você tem <span class="highlight">7 dias completos</span> para testar TUDO. Use os templates, edite, poste, veja os resultados...</p>
+                <p>Se por qualquer motivo você não ficar 100% satisfeito, é só me mandar uma mensagem e eu <span class="highlight">devolvo TODO o seu dinheiro</span>. Sem perguntas, sem burocracia!</p>
+                <p style="margin-top: 30px; font-size: 1.1rem;">O risco é TODO MEU. Você só tem a ganhar! 🚀</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>❓ Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas antes de começar sua transformação</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Preciso pagar o Canva para usar os templates?
+                    </div>
+                    <div class="faq-answer">
+                        Não! Todos os templates funcionam na versão GRATUITA do Canva. Você não precisa pagar nada além do kit.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Consigo editar pelo celular?
+                    </div>
+                    <div class="faq-answer">
+                        SIM! Você pode editar tanto pelo celular (app do Canva) quanto pelo computador. É super fácil!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Como recebo o material após a compra?
+                    </div>
+                    <div class="faq-answer">
+                        Imediatamente após a confirmação do pagamento, você recebe um PDF por e-mail com todos os links de acesso aos templates.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Posso usar para mais de um negócio?
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Você pode usar os templates em quantos negócios quiser. Não há limite de uso.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        E se eu não souber editar?
+                    </div>
+                    <div class="faq-answer">
+                        Relaxa! É super fácil de aprender, tem muitos tutoriais no youtube. E se tiver qualquer dúvida, nosso suporte te ajuda pelo WhatsApp.Ou você pode adquirir a edição por fora. Solicite um Orçamento.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Posso imprimir os cardápios?
+                    </div>
+                    <div class="faq-answer">
+                        SIM! Os cardápios vão na ver~sao folha A4, prontos para impressão profissional. Você também recebe a versão digital com QR Code.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="footer-cta-content">
+            <h2>🔥 Última Chance de Pegar Essa Promoção!</h2>
+            <p>Não deixe seus concorrentes saírem na frente. Transforme seu marketing HOJE e comece a vender MUITO MAIS!</p>
+            <a href="#pacotes" class="cta-button">QUERO TRANSFORMAR MEU NEGÓCIO AGORA! 🚀</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Super Box Digital - Todos os direitos reservados</p>
+            <p>Dúvidas? Entre em contato: <a href="mailto:contato@superboxdigital.com">contato@superboxdigital.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        const carousels = {
+            'artes': { current: 0, total: 4 },
+            'logos': { current: 0, total: 12 },
+            'cardapio': { current: 0, total: 7 }
+        };
+
+        function moveCarousel(name, direction) {
+            const carousel = carousels[name];
+            carousel.current = (carousel.current + direction + carousel.total) % carousel.total;
+            
+            const track = document.querySelector(`#${name}Carousel .carousel-track`);
+            track.style.transform = `translateX(-${carousel.current * 100}%)`;
+            
+            updateDots(name);
+        }
+
+        function updateDots(name) {
+            const carousel = carousels[name];
+            const dotsContainer = document.getElementById(`${name}Dots`);
+            
+            if (!dotsContainer.children.length) {
+                for (let i = 0; i < carousel.total; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    dot.onclick = () => goToSlide(name, i);
+                    dotsContainer.appendChild(dot);
+                }
+            }
+            
+            Array.from(dotsContainer.children).forEach((dot, index) => {
+                dot.classList.toggle('active', index === carousel.current);
+            });
+        }
+
+        function goToSlide(name, index) {
+            const carousel = carousels[name];
+            carousel.current = index;
+            
+            const track = document.querySelector(`#${name}Carousel .carousel-track`);
+            track.style.transform = `translateX(-${carousel.current * 100}%)`;
+            
+            updateDots(name);
+        }
+
+        // Initialize dots
+        Object.keys(carousels).forEach(name => updateDots(name));
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Auto-play carousels
+        setInterval(() => {
+            Object.keys(carousels).forEach(name => {
+                moveCarousel(name, 1);
+            });
+        }, 5000);
+    </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5598984803934?text=Oi!%20Tenho%20interesse%20no%20Super%20Box%20Digital%20para%20Espetarias%20🍢🔥" class="whatsapp-float" target="_blank" rel="noopener noreferrer" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
+
