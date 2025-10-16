@@ -1371,6 +1371,129 @@
             scroll-behavior: smooth;
         }
 
+    
+        /* Ajustes para Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem !important;
+            }
+            .hero-subtitle {
+                font-size: 1rem !important;
+            }
+            .hook-disruptivo h2 {
+                font-size: 1.8rem !important;
+            }
+            .hook-disruptivo .subtitle {
+                font-size: 1.2rem !important;
+            }
+            .hook-disruptivo p {
+                font-size: 1rem !important;
+            }
+            .section-header h2 {
+                font-size: 1.8rem !important;
+            }
+            .cta-button {
+                padding: 12px 25px !important;
+                font-size: 1rem !important;
+            }
+            .package-card h3 {
+                font-size: 1.6rem !important;
+            }
+            .stop-sign {
+                font-size: 3rem !important;
+            }
+        }
+
+    
+        .gift-highlight {
+            background: #F39C12;
+            color: #1A1A1A;
+            padding: 30px 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.5);
+            border: 3px solid #E74C3C;
+        }
+        .gift-highlight h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1A1A1A;
+            line-height: 1.3;
+        }
+        .gift-highlight .gift-subtitle {
+            font-size: 1.3rem;
+            color: #1A1A1A;
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .gift-highlight h2 {
+                font-size: 1.4rem;
+            }
+            .gift-highlight .gift-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+    
+        .package-card {
+            padding: 25px !important;
+        }
+        .package-features {
+            margin: 20px 0 !important;
+        }
+        .package-features li {
+            padding: 8px 0 !important;
+            font-size: 0.95rem !important;
+        }
+        .package-price {
+            margin: 20px 0 !important;
+        }
+        .package-card h3 {
+            font-size: 1.8rem !important;
+            margin-bottom: 15px !important;
+        }
+        @media (max-width: 768px) {
+            .package-card h3 {
+                font-size: 1.5rem !important;
+            }
+        }
+
+    
+        .whatsapp-float {
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            background: #25D366 !important;
+            color: #FFFFFF !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5) !important;
+            z-index: 9999 !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1) !important;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7) !important;
+        }
+
+    
+        .facebook-ad-notice {
+            background: #1A1A1A;
+            color: #888;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 1px solid #333;
+        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -1397,7 +1520,7 @@ Se suas imagens tiverem nomes diferentes, você precisará ajustar os caminhos n
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Será que é só o tempero que faz vender?</h1>
+                    <h1 style="color: #FFFFFF;">Será que é só o tempero que faz vender?</h1>
                     <p class="hero-subtitle">Tem espetaria que vive cheia… e outras que lutam pra ter movimento. O que muda entre elas?</p>
                     <a href="#hook-section" class="cta-button scroll-to-section">🔥 Quero os Cardápios Grátis</a>
                 </div>
@@ -1439,7 +1562,7 @@ Se suas imagens tiverem nomes diferentes, você precisará ajustar os caminhos n
 <!-- Nova Introdução -->
     <section class="section-header" style="padding: 80px 20px 0; background: #1A1A1A;">
         <div class="container">
-            <h2>🎉 Conheça o Super Box Digital para Espetarias e Churrascarias</h2>
+            <h2><span style="color: #F39C12;">🎉 Conheça o Super Box Digital para Espetarias e Churrascarias</span></h2>
             <p>Confira uma prévia do que você vai receber 👇</p>
         </div>
     </section>
@@ -1601,7 +1724,7 @@ Se suas imagens tiverem nomes diferentes, você precisará ajustar os caminhos n
                         <li>🎁:20 Legendas Prontas para Copiar e Colar</li>
                         <li>Suporte via WhatsApp</li>
                     </ul>
-                    <a href="https://pay.cakto.com.br/37uh966_297818" class="cta-button">COMEÇAR AGORA →</a>
+                    <a href="https://pay.cakto.com.br/37uh966_297818" class="cta-button">QUERO O BÁSICO</a>
                 </div>
 
                 <!-- Premium Package -->
@@ -1615,17 +1738,17 @@ Se suas imagens tiverem nomes diferentes, você precisará ajustar os caminhos n
                     </div>
                     <ul class="package-features">
                         <li><strong>7 Cardápios Digitais Editáveis</strong> (versão digital + impressão + QR Code)</li>
-                        <li><strong>156 Artes Profissionais</strong> Posts+Storys (6+ meses de conteúdo!)</li>
+                        <li><strong>156 Artes Profissionais</strong> para Redes Sociais (6+ meses de conteúdo!)</li>
                         <li><strong>25 Logomarcas Editáveis</strong> (identidade visual profissional)</li>
                         <li><strong>10 Panfletos Editáveis</strong> para impressão</li>
                         <li><strong>🎁:20 Vídeos Profissionais</strong> para Reels e Stories</li>
                         <li>🎁:Capas de Destaques + Capa de Facebook + Link da Bio</li>
                         <li>🎁:100 Sugestões de Legendas Prontas</li>
-                        <li>🎁:180 Artes Prontas ( só baixar e postar)</li>
+                        <li>🎁:180 Imagens Premium em Alta Qualidade</li>
                         <li>🎁:Imagens PNG com Fundo Transparente</li>
                         <li>Suporte VIP via WhatsApp</li>
                     </ul>
-                    <a href="https://pay.cakto.com.br/ssww6db" class="cta-button">QUERO O COMPLETÃO! 🔥</a>
+                    <a href="https://pay.cakto.com.br/ssww6db" class="cta-button">QUERO O PREMIUM</a>
                 </div>
             </div>
         </div>
@@ -1634,20 +1757,18 @@ Se suas imagens tiverem nomes diferentes, você precisará ajustar os caminhos n
     <!-- Free Gift Section - MOVIDA PARA CÁ -->
     <section class="free-gift">
         <div class="free-gift-content">
-            <div class="gift-badge">🎁 PRESENTE GRÁTIS COMO PROMETIDO!</div>
-            <h2>Baixe AGORA Seus 2 Cardápios Digitais Profissionais!</h2>
-            <p>Como prometido, aqui estão seus 2 modelos de cardápio gratuitos. Clique nos botões abaixo e receba instantaneamente:</p>
-            
+            <div class="gift-highlight">
+                <h2>🎁 Seu Presente tá Aqui! 2 cardápios profissionais (de graça!)</h2>
+                <p class="gift-subtitle">Clique nos Botões Abaixo para baixar ⬇️</p>
+            </div>
             <div class="download-buttons">
-                <a href="https://www.canva.com/design/DAEw1aB-f0g/7wCZ_YLfBJs-9OdsnyGqew/view?utm_content=DAEw1aB-f0g&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="download-btn">
-                    <span>📥</span> Baixar Modelo 1
+                <a href="#" class="download-btn" target="_blank" rel="noopener noreferrer">
+                    📥 Cardápio 1
                 </a>
-                <a href="https://www.canva.com/design/DAErRB8OflA/ClvSv7SvdG_TcFButdXN6Q/view?utm_content=DAErRB8OflA&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="download-btn">
-                    <span>📥</span> Baixar Modelo 2
+                <a href="#" class="download-btn" target="_blank" rel="noopener noreferrer">
+                    📥 Cardápio 2
                 </a>
             </div>
-            
-            <p class="gift-note">* Versão digital editável no Canva. Para o kit completo com 7 modelos, volte para os pacotes acima! 👆</p>
         </div>
     </section>
 
@@ -1874,7 +1995,7 @@ Se suas imagens tiverem nomes diferentes, você precisará ajustar os caminhos n
     <footer>
         <div class="container">
             <p>&copy; 2024 Super Box Digital - Todos os direitos reservados</p>
-            <p>Dúvidas? Entre em contato: <a href="mailto:contato@superboxdigital.com">contato@superboxdigital.com</a></p>
+            <p>Dúvidas? Entre em contato: <a href="mailto:contato@wpartesdigitais.online">contato@wpartesdigitais.online</a></p>
         </div>
     </footer>
 
@@ -1967,6 +2088,11 @@ Se suas imagens tiverem nomes diferentes, você precisará ajustar os caminhos n
             });
         });
     </script>
+
+
+    <div class="facebook-ad-notice">
+        <p>Este site não faz parte do site do Facebook ou do Facebook Inc. Além disso, este site NÃO é endossado pelo Facebook de forma alguma. FACEBOOK é uma marca comercial da FACEBOOK, Inc.</p>
+    </div>
 
 </body>
 </html>
